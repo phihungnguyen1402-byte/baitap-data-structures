@@ -16,7 +16,7 @@ typedef struct {
     bool isFree[POOL_SIZE];                
 } MemPool_t;
 
-// Các hàm quản lý bãi đậu xe
+// Các hàm quản lý 
 void MemPool_Init(MemPool_t* pool);
 void* MemPool_Alloc(MemPool_t* pool);           // Xin cấp phát (thay cho malloc)
 bool MemPool_Free(MemPool_t* pool, void* ptr);  // Trả lại (thay cho free)
