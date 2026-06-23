@@ -5,13 +5,12 @@
 #include <stdbool.h>
 #include <stddef.h> // Để dùng chữ NULL
 
-// 1. Định nghĩa "Toa tàu" (Node)
+
 typedef struct Node {
     uint8_t data;           // Hàng hóa: Chứa 1 byte dữ liệu
     struct Node* next;      // Cái móc: Con trỏ trỏ đến toa tàu tiếp theo
 } Node_t;
 
-// 2. Định nghĩa "Đoàn tàu" (Linked List)
 typedef struct {
     Node_t* head;           // Con trỏ trỏ đến toa đầu tiên của đoàn tàu
 } LinkedList_t;
