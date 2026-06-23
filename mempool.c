@@ -1,6 +1,6 @@
 #include "mempool.h"
 
-// 1. Khởi tạo: Ban đầu tất cả các chỗ đậu xe đều trống
+// 1. Khởi tạo: Ban đầu tất cả đều trống
 void MemPool_Init(MemPool_t* pool) {
     for (int i = 0; i < POOL_SIZE; i++) {
         pool->isFree[i] = true; 
@@ -16,7 +16,7 @@ void* MemPool_Alloc(MemPool_t* pool) {
             return pool->blocks[i];  // Giao chìa khóa (địa chỉ của khối) cho khách
         }
     }
-    return NULL; // Hết chỗ!
+    return NULL; 
 }
 
 // 3. Trả lại khối bộ nhớ khi không dùng nữa
@@ -30,5 +30,5 @@ bool MemPool_Free(MemPool_t* pool, void* ptr) {
             return true;
         }
     }
-    return false; // Địa chỉ xớ rớ ở đâu đem tới, không thuộc bãi giữ xe này!
+    return false; 
 }
