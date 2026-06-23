@@ -2,7 +2,7 @@
 #include <assert.h>     // Thu vien dung de Unit Test
 #include "ringbuffer.h"
 
-// 1. Viết hàm test cho chức năng Init (Khởi tạo)
+// test cho chức năng Init (Khởi tạo)
 void test_RingBuffer_Init() {
     RingBuffer_t rb;
     RingBuffer_Init(&rb);
@@ -16,13 +16,13 @@ void test_RingBuffer_Init() {
     printf("PASS: test_RingBuffer_Init\n");
 }
 
-// 2. Viết hàm test cho chức năng Ghi và Đọc
+//  test cho chức năng Ghi và Đọc
 void test_RingBuffer_WriteRead() {
     RingBuffer_t rb;
     RingBuffer_Init(&rb);
     uint8_t outData;
 
-    // Test 1: Ghi 1 byte vào phải thành công, và head phải tăng lên 1
+    //  Ghi 1 byte vào phải thành công, và head phải tăng lên 1
     assert(RingBuffer_Write(&rb, 42) == true);
     assert(rb.head == 1);
     
@@ -34,7 +34,7 @@ void test_RingBuffer_WriteRead() {
     printf("PASS: test_RingBuffer_WriteRead\n");
 }
 
-// 3. Viết hàm test kịch bản tràn Buffer (Wrap-around)
+// test kịch bản tràn Buffer (Wrap-around)
 void test_RingBuffer_WrapAround() {
     RingBuffer_t rb;
     RingBuffer_Init(&rb);
